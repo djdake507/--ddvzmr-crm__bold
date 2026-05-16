@@ -2,6 +2,8 @@
 
 A scaffold for an agentic, multi-tenant CRM platform (backend TypeScript + Express, AI agents, PostgreSQL, and a React frontend).
 
+![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)
+
 ## Summary
 
 This repository contains a prototype/full scaffold for an agent-driven CRM supporting tenant isolation, agent workflows, integrations, and a React client.
