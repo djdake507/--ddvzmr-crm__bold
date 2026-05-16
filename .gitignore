@@ -1,0 +1,61 @@
+node_modules/
+dist/
+build/
+.env
+.env.*
+npm-debug.log
+yarn-error.log
+.DS_Store
+coverage/
+client/node_modules/
+client/build/
+.vscode/
+.devcontainer/
+# Gitignore for Agentic CRM Platform
+
+# Node modules
+node_modules/
+package-lock.json
+yarn.lock
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Build output
+dist/
+build/
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+coverage/
+.nyc_output/
+
+# Client
+client/node_modules/
+client/build/
+client/.env.local
+
+# Database
+*.sqlite
+*.db
+
+# Temporary files
+tmp/
+temp/

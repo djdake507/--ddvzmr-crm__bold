@@ -6,41 +6,18 @@ A scaffold for an agentic, multi-tenant CRM platform (backend TypeScript + Expre
 
 This repository contains a prototype/full scaffold for an agent-driven CRM supporting tenant isolation, agent workflows, integrations, and a React client.
 
-## Quickstart
 
-From the project root:
+## Setup Guide
 
-1. Install backend dependencies (use `--legacy-peer-deps` if you encounter peer conflicts):
+Detailed terminal instructions and step-by-step setup were moved to `SETUP_GUIDE.md` to keep this `README.md` concise. See the full development and git push instructions there.
 
-```bash
-npm install --legacy-peer-deps
-```
+## Environment (short)
 
-2. Start the backend in development:
-
-```bash
-npm run dev
-```
-
-3. In a separate terminal, install and start the client:
-
-```bash
-cd client
-npm install
-npm start
-```
-
-## Environment
-
-Copy `.env.example` to `.env` and set values for:
-
-- `DATABASE_URL` — PostgreSQL connection string
-- `JWT_SECRET` — JWT signing secret
-- Other provider/API keys as needed (SendGrid, Slack, Salesforce, etc.)
+Copy `.env.example` to `.env` and set values for `DATABASE_URL`, `JWT_SECRET`, and any provider/API keys you need (SendGrid, Slack, Salesforce, etc.).
 
 ## Contributing
 
-This is an active scaffold. Feel free to open issues or PRs. For local development, run the backend and client simultaneously.
+This is an active scaffold. Feel free to open issues or PRs. For local development, run the backend and client simultaneously; see `SETUP_GUIDE.md` for exact commands.
 
 ## License
 
