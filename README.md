@@ -1,53 +1,146 @@
 # Agentic CRM
 
-A scaffold for an agentic, multi-tenant CRM platform (backend TypeScript + Express, AI agents, PostgreSQL, and a React frontend).
+A **Salesforce + Slack competitor** combining enterprise CRM capabilities with intelligent agent-assisted customer profile tracking and real-time collaboration.
 
 ![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)
 
-## Summary
+## Vision
 
-This repository contains a prototype/full scaffold for an agent-driven CRM supporting tenant isolation, agent workflows, integrations, and a React client.
+This platform differentiates itself through:
 
+1. **Dual-layer customer profiles** — Surface data (vendor/external) + internal CRM-only profiles (redacted, accessible only to admins and agents).
+2. **Fluid agent collaboration** — Agents work alongside reps in intelligent, contextual exchanges—not as directive chatbots.
+3. **KPI tracking + predictive analytics** — Real-time dashboards for tenant, rep, and customer health metrics.
+4. **Profile pipeline management** — Define customer journeys and track progression through stages.
 
-## Setup Guide
+See [ARCHITECTURE.md](ARCHITECTURE.md) for a comprehensive overview of the dual-layer system, agent behavior model, and competitive positioning.
 
-Detailed terminal instructions and step-by-step setup were moved to `SETUP_GUIDE.md` to keep this `README.md` concise. See the full development and git push instructions there.
+## Key Features
 
-## Environment (short)
+### 🎯 Customer Profile Tracking
+- **Dual-layer identification:** `vendorCustomerId` (external/surface) + `crmCustomerId` (internal/redacted)
+- **Surface data:** Limited access to vendor-provided customer info
+- **Internal profiles:** Admin-rep and agent-accessible enriched customer insights
+- **Historical data import:** One-time training data for agent knowledge base
+- **Profile pipelines:** Define and manage customer journeys through custom stages
 
-Copy `.env.example` to `.env` and set values for `DATABASE_URL`, `JWT_SECRET`, and any provider/API keys you need (SendGrid, Slack, Salesforce, etc.).
+### 🤖 Intelligent Agent Assistance
+- **Contextual insights:** Agents surface relevant historical data, patterns, and recommendations during rep conversations
+- **Fluid exchange:** Agents assist reps—not a chatbot, but a collaborative partner
+- **Knowledge base:** Trained on historical interactions and customer profiles from Layer 2
+- **Real-time collaboration:** Agent suggestions appear alongside rep notes in interaction timeline
+
+### 📊 KPI Tracking & Predictive Models
+- **Tenant-level KPIs:** Revenue, CAC, churn rate, LTV
+- **Rep-level KPIs:** Pipeline value, close rate, customer satisfaction
+- **Customer-level KPIs:** Health score, engagement, churn risk, expansion opportunity
+- **Predictions:** Churn risk, expansion opportunities, sentiment analysis, pipeline forecasting
+
+### 💬 Real-time Collaboration
+- Built-in rep-agent communication
+- Shared customer context and notes
+- Integration with Slack and email
+
+### 🔧 Multi-Tenant Enterprise Platform
+- Tenant isolation and role-based access control
+- Audit logging and compliance
+- Customizable workflows and pipelines
+- REST API-first architecture
+
+## Tech Stack
+
+- **Backend:** Node.js + Express + TypeScript
+- **Database:** PostgreSQL + Sequelize ORM
+- **Frontend:** React 18 + Tailwind CSS + Zustand
+- **Auth:** JWT-based with bcrypt hashing
+- **Real-time:** (Planned) WebSocket for live collaboration
+- **Logging:** Winston
+
+## Quick Start
+
+### Backend
+
+```bash
+cd /path/to/agentic-crm
+npm install --legacy-peer-deps
+npm run dev
+```
+
+### Frontend
+
+```bash
+cd client
+npm install
+npm start
+```
+
+For detailed setup instructions, see [SETUP_GUIDE.md](SETUP_GUIDE.md).
+
+## Environment Setup
+
+Copy `.env.example` to `.env`:
+
+```bash
+DATABASE_URL=postgresql://user:password@localhost:5432/agentic_crm
+JWT_SECRET=your-secret-key-here
+NODE_ENV=development
+```
+
+Optional API keys for integrations:
+- SendGrid (email service)
+- Slack (webhooks)
+- Salesforce (OAuth)
+
+## Architecture & Design
+
+See [ARCHITECTURE.md](ARCHITECTURE.md) for:
+- Dual-layer customer profile system details
+- Agent collaboration model and behavior
+- KPI framework and predictive models
+- Profile pipeline management
+- Database schema and API design
+- Security & multi-tenancy approach
+- Development roadmap (Phase 1, 2, 3)
 
 ## Contributing
 
-This is an active scaffold. Feel free to open issues or PRs. For local development, run the backend and client simultaneously; see `SETUP_GUIDE.md` for exact commands.
+This is an active scaffold. Feel free to open issues or PRs. For local development:
+
+1. Clone the repo
+2. Install dependencies (backend + client)
+3. Set up `.env` with database and API keys
+4. Run backend (`npm run dev`) and client (`npm start`) simultaneously
+5. See [SETUP_GUIDE.md](SETUP_GUIDE.md) for detailed commands
+
+## Roadmap
+
+### Phase 1 (Current)
+- [x] Scaffold backend and frontend
+- [x] Authentication & RBAC
+- [ ] Dual-layer customer profile models and API
+- [ ] Basic KPI metric system
+- [ ] Initial agent knowledge base setup
+
+### Phase 2
+- [ ] Agent collaboration UI (rep + agent exchange)
+- [ ] Real-time insights delivery
+- [ ] Profile pipeline management (Kanban UI)
+- [ ] Predictive models (churn, expansion, sentiment)
+
+### Phase 3
+- [ ] Voice transcription and agent listening
+- [ ] Advanced knowledge base training
+- [ ] Integration with Salesforce, HubSpot, Zendesk
+- [ ] Slack/Teams bot
+- [ ] Advanced analytics and forecasting
 
 ## License
 
-TBD
-# Agentic CRM Platform
+MIT License — See [LICENSE](LICENSE) for details.
 
-A comprehensive CRM platform powered by AI agents for multiple use cases including lead qualification, customer support, sales automation, and analytics.
+## Contact & Support
 
-## Features
-
-### 🤖 Agentic Framework
-- **Lead Qualification Agent**: Automatically scores and qualifies leads
-- **Customer Support Agent**: Handles support requests and generates responses
-- **Sales Automation Agent**: Analyzes deals and provides sales recommendations
-- **Analytics Agent**: Generates CRM reports and insights
-
-### 📊 Core CRM Features
-- Contact management with segmentation
-- Deal pipeline tracking
-- Activity logging and task management
-- Real-time analytics and reporting
-- Integration with third-party services
-
-### 🔧 Technical Stack
-- **Backend**: Node.js + Express + TypeScript
-- **Database**: PostgreSQL + Sequelize ORM
-- **AI Framework**: Custom agent orchestration system
-- **API**: REST API with comprehensive endpoints
+For questions or feedback, open an issue or reach out to the maintainers.
 - **Integrations**: Salesforce, Slack, Email services
 
 ## Project Structure
