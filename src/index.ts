@@ -10,6 +10,10 @@ import dealRoutes from '@api/routes/dealRoutes';
 import agentRoutes from '@api/routes/agentRoutes';
 import authRoutes from '@api/routes/authRoutes';
 import workflowRoutes from '@api/routes/workflowRoutes';
+import customerProfileRoutes from '@api/routes/customerProfileRoutes';
+import kpiRoutes from '@api/routes/kpiRoutes';
+import pipelineRoutes from '@api/routes/pipelineRoutes';
+import agentInsightsRoutes from '@api/routes/agentInsightsRoutes';
 import { authMiddleware } from '@middleware/authMiddleware';
 
 dotenv.config();
@@ -39,9 +43,13 @@ app.use('/api/auth', authRoutes);
 
 // Protected API Routes (require authentication)
 app.use('/api/contacts', authMiddleware, contactRoutes);
+app.use('/api/customers', authMiddleware, customerProfileRoutes);
 app.use('/api/deals', authMiddleware, dealRoutes);
 app.use('/api/agents', authMiddleware, agentRoutes);
-app.use('/api/workflows', workflowRoutes);
+app.use('/api/workflows', authMiddleware, workflowRoutes);
+app.use('/api/kpi', authMiddleware, kpiRoutes);
+app.use('/api/pipelines', authMiddleware, pipelineRoutes);
+app.use('/api/agent-insights', authMiddleware, agentInsightsRoutes);
 
 // 404 handler
 app.use((req: Request, res: Response) => {
